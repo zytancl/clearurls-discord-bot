@@ -606,6 +606,52 @@
         </div>
     </section>
 
+    <section id="delete-original" style="padding: 6rem 0; background-color: var(--background);">
+        <div class="container">
+            <h2
+                style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                Deleting Messages With Tracking Links</h2>
+            <div
+                style="max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    By default the bot leaves the original message alone and replies with the cleaned links. Server
+                    managers can instead turn on <strong>delete original</strong>, so tracking links never stay in the
+                    channel at all.
+                </p>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                    When it's on and a member posts a message containing tracking links, the bot will:
+                </p>
+                <ul style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin: 0 0 1.5rem 1.5rem;">
+                    <li>post a copy of the message with the tracking removed, introduced by a note saying who sent it
+                        and that it was automatically cleaned, then</li>
+                    <li>delete the original message.</li>
+                </ul>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                    The copy is posted by the bot, not by the original sender, and it never pings anyone. If the
+                    original was a reply, the copy replies to the same message.
+                </p>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+                    The bot will <strong>not</strong> delete a message, and replies as usual instead, when:
+                </p>
+                <ul style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin: 0 0 1.5rem 1.5rem;">
+                    <li>it has attachments or stickers, which can't be reposted;</li>
+                    <li>it was sent by a bot or webhook;</li>
+                    <li>the cleaned copy wouldn't fit in a single Discord message; or</li>
+                    <li>the bot doesn't have the <em>Manage Messages</em> permission in that channel.</li>
+                </ul>
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7;">
+                        <strong>Turning it on or off:</strong> anyone with the <em>Manage Server</em> permission can
+                        run <code style="color: #FF5D01;">/delete-original enabled:True</code> (or
+                        <code style="color: #FF5D01;">False</code>) in your server. It's off by default. If the command
+                        doesn't show up, re-invite the bot with the button above so it gets the
+                        <em>applications.commands</em> scope.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="demo-section final-cta">
         <div class="tech-grid"></div>
         <div class="tech-particle"></div>
