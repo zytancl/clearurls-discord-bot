@@ -24,7 +24,11 @@ class GuildSettingsTest(unittest.TestCase):
             first = GuildSettings(path)
             first.set_delete_original(123456789012345678, True)
             first.close()
-            self.assertTrue(GuildSettings(path).get_delete_original(123456789012345678))
+            second = GuildSettings(path)
+            try:
+                self.assertTrue(second.get_delete_original(123456789012345678))
+            finally:
+                second.close()
 
 
 if __name__ == '__main__':

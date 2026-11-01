@@ -13,7 +13,7 @@ from shortlinks import is_short_link_token, resolve_short_url
 
 logger = logging.getLogger(__name__)
 
-DOCS_URL = 'https://danielzting.github.io/clearurls-discord-bot/'
+DOCS_URL = 'https://github.com/zytancl/clearurls-discord-bot'
 URL_PATTERN = re.compile(r'https?://[^\s]+')
 MAX_MESSAGE_LENGTH = 2000
 # Cap on short links followed per message, so one message can't trigger a flood of requests
